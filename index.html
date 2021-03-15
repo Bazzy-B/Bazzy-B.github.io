@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Wave-Particle Web-App </title>
+		<author>Matthew Barton</author>
+	</head>
+	<body>
+	
+		<div>
+		<button onclick="boxInfo()">Information (Read Me)</button>
+		<button type="button" onclick="location.href='part2.html';">Part 2</button>
+		</div>
+	</body>
+	
+	<canvas id="myCanvas" width="1250" height="540"
+		style="border:1px solid #FFFFFF;">
+		Your browser does not support the canvas element.
+		</canvas>
+	
+		<script>
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			function boxInfo() {
+				alert("•This app is aimed at chemistry students & is intended to be used as an aid for primarily physical modules.\n\n•One of the core concepts in these modules is the interaction between radiation & matter.\n\n•Our understanding of this interaction & those systems has given us highly accurate spectroscopic analysis.\n\n•Note: the information boxes in parts 1, 2 and 3 are all different. Please complete the questionaire at the end. Thanks !");
+			}
+			
+			ctx.lineWidth = 2;
+			
+			
+			//boxA
+			ctx.font="18px Consolas";
+			ctx.fillStyle='black';
+			ctx.fillText("If you have a positive charge in space,"
+			,21,305);
+			ctx.fillText("this will have a spherical field around"
+			,21,325);
+			ctx.fillText("it. This is its Electric Field    .    "
+			,21,345);
+			ctx.fillText("It is a vector quantity as it has a    "
+			,21,365);
+			ctx.fillText("direction and magnitude.               "
+			,21,385);
+			ctx.fillStyle='#000FFF';
+			ctx.fillText("                               'E'"
+			,21,345);
+			ctx.stroke();
+			
+			ctx.save();
+			ctx.transform(1.35,0,0,1.35,0,0);
+			ctx.strokeStyle='black';
+			ctx.fillStyle='black';
+			ctx.beginPath();
+			ctx.arc(125,107,7,0,2*Math.PI);
+			ctx.fill();
+			ctx.stroke();
+			ctx.strokeStyle = '#000FFF';
+			ctx.fillStyle='#000FFF';
+			ctx.beginPath();
+			ctx.arc(125,107,100,0,2*Math.PI);
+			ctx.stroke();
+			ctx.fillText("+", 131,103);
+			ctx.restore();
+			
+			ctx.font = "28px Consolas";
+			ctx.strokeStyle='#000FFF';
+			ctx.fillText("a", 392,20);
+			ctx.moveTo(390,2);
+			ctx.lineTo(390,22);
+			ctx.lineTo(410,22);
+			ctx.stroke();
+			
+			ctx.strokeStyle = '#000000';
+			ctx.beginPath();
+			ctx.moveTo(20,2);
+			ctx.lineTo(410,2);
+			ctx.lineTo(410,392);
+			ctx.lineTo(20,392);
+			ctx.lineTo(20,2);
+			ctx.moveTo(20,392);
+			ctx.lineTo(10,400);
+			ctx.moveTo(20,2);
+			ctx.lineTo(10,10);
+			ctx.lineTo(10,400);
+			ctx.lineTo(400,400);
+			ctx.lineTo(410,392);
+			ctx.stroke();
+			
+			
+			//boxB
+			ctx.font="28px Consolas";
+			ctx.fillStyle='black';
+			ctx.fillText("I",625,165);
+			ctx.font="18px Consolas";
+			ctx.fillStyle='black';
+			ctx.fillText("If you have a current 'I' in a wire,   "
+			,431,325);
+			ctx.fillText("this will have a Magnetic Field,       "
+			,431,345);
+			ctx.fillText("looping around it. This is another     "
+			,431,365);
+			ctx.fillText("vector and has the symbol:    ."
+			,431,385);
+			ctx.fillStyle='#ff0000';
+			ctx.fillText("                           'B'"
+			,431,385);
+			
+			ctx.stroke();
+			
+			ctx.save();
+			ctx.transform(1.94,0,0,1.94,-413,-30);
+			ctx.strokeStyle='black';
+			ctx.beginPath();
+			ctx.moveTo(435,107);
+			ctx.lineTo(635,107);
+			ctx.moveTo(530,115);
+			ctx.lineTo(540,107);
+			ctx.lineTo(530,99);
+			ctx.stroke();
+			ctx.fillStyle='#ff0000';
+			ctx.strokeStyle='#ff0000';
+			//curvy arrow 1
+			ctx.beginPath();
+			ctx.arc(480,107,20,0.5,1.85*Math.PI);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(499,100);
+			ctx.lineTo(497,87)
+			ctx.lineTo(487,97)
+			ctx.lineTo(499,100)
+			ctx.stroke();
+			ctx.fill();
+				//curvy arrow 2
+			ctx.beginPath();
+			ctx.arc(590,107,20,0.5,1.85*Math.PI);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(609,100);
+			ctx.lineTo(607,87)
+			ctx.lineTo(597,97)
+			ctx.lineTo(609,100)
+			ctx.stroke();
+			ctx.fill();
+			ctx.restore();
+			
+			ctx.strokeStyle='#ff0000';
+			ctx.beginPath();
+			ctx.moveTo(800,2);
+			ctx.lineTo(800,22);
+			ctx.lineTo(820,22);
+			ctx.stroke();
+			ctx.font = "28px Consolas";
+			ctx.fillText("b", 802,20);
+			ctx.strokeStyle='black';
+			ctx.beginPath();
+			ctx.moveTo(430,2);
+			ctx.lineTo(820,2);
+			ctx.lineTo(820,392);
+			ctx.lineTo(430,392);
+			ctx.lineTo(430,2);
+			ctx.moveTo(430,392);
+			ctx.lineTo(420,400);
+			ctx.moveTo(430,2);
+			ctx.lineTo(420,10);
+			ctx.lineTo(420,400);
+			ctx.lineTo(810,400);
+			ctx.lineTo(820,392);
+			ctx.stroke();
+			
+			//boxC
+			ctx.font="18px Consolas";
+			ctx.fillStyle='black';
+			ctx.fillText("If you have a changing Electric Field  "
+			,841,165);
+			ctx.fillText("e.g. A MOVING CHARGE IN SPACE, this    "
+			,841,185);
+			ctx.fillText("will create a changing Magnetic Field  "
+			,841,205);
+			ctx.fillText("Similarly, if you have a changing      "
+			,841,225);
+			ctx.fillText("Magnetic Field, e.g. DIRECTION OF      "
+			,841,245);
+			ctx.fillText("CURRENT IN A WIRE OSCILLATING BETWEEN  "
+			,841,265);
+			ctx.fillText("BACK AND FORWARD, this will create a   "
+			,841,285);
+			ctx.fillText("changing Electric Field.                                 "
+			,841,305);
+			ctx.fillStyle='black';
+			ctx.fillText("These physical laws yield an important "
+			,841,365);
+			ctx.fillText("model, depicted below.                 "
+			,841,385);
+			ctx.fillText("This will create a propogating         "
+			,841,425);
+			ctx.fillText("                Wave, where the fields "
+			,841,445);
+			ctx.fillText("are pointing outwards perpendicular to "
+			,841,465);
+			ctx.fillText("one another. This radiation moves at   "
+			,841,485);
+			ctx.fillText("the speed of light (v = velocity)      "
+			,841,505);
+			ctx.fillText("through the vacuum of space.           "
+			,841,525);
+			ctx.fillStyle='#000FFF';
+			ctx.fillText("Electro                                "
+			,841,445);
+			ctx.fillStyle='#ff0000';
+			ctx.fillText("       magnetic                        "
+			,841,445);
+			
+			
+			
+			
+			
+			ctx.stroke();
+			ctx.strokeStyle='black';
+			ctx.beginPath();
+			ctx.moveTo(840,2);
+			ctx.lineTo(1230,2);
+			ctx.lineTo(1230,392);
+			ctx.lineTo(840,392);
+			ctx.lineTo(840,2);
+			ctx.moveTo(840,392);
+			ctx.lineTo(830,400);
+			ctx.moveTo(840,2);
+			ctx.lineTo(830,10);
+			ctx.lineTo(830,400);
+			ctx.lineTo(1220,400);
+			ctx.lineTo(1230,392);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(948,150,100,4,1.7*Math.PI);
+			ctx.lineTo(1002,57);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.arc(948,35,100,2.29*Math.PI,2.26);
+			ctx.lineTo(888,123);
+			ctx.stroke();
+			
+				//ΔE
+			ctx.font = "40px Consolas";
+			ctx.fillStyle='#000FFF';
+			ctx.fillText("ΔE",870,107);
+			ctx.stroke();
+			ctx.strokeStyle='#000FFF';		
+			ctx.beginPath();
+			ctx.moveTo(896,77);
+			ctx.lineTo(909,77);
+			ctx.lineTo(905,73);
+			ctx.stroke();
+				//ΔB
+			ctx.fillStyle='#ff0000';
+			ctx.fillText("ΔB",980,107);
+			ctx.stroke();
+			ctx.strokeStyle='#ff0000';
+			ctx.beginPath();
+			ctx.moveTo(1005,77);
+			ctx.lineTo(1018,77);
+			ctx.lineTo(1014,73);
+			ctx.stroke();
+			
+			//boxD
+			ctx.strokeStyle='black';
+			ctx.beginPath();
+			ctx.moveTo(20,410);
+			ctx.lineTo(1230,410);
+			ctx.lineTo(1230,530);
+			ctx.lineTo(20,530);
+			ctx.lineTo(20,410);
+			ctx.moveTo(20,410);
+			ctx.lineTo(10,418);
+			ctx.lineTo(10,538);
+			ctx.lineTo(1220,538);
+			ctx.lineTo(1230,530);
+			ctx.moveTo(20,530);
+			ctx.lineTo(10,538);
+			ctx.stroke();
+			ctx.beginPath();
+				//axis for waveform v, E
+			ctx.moveTo(22,470);
+			ctx.lineTo(27,473);
+			ctx.lineTo(27,467);
+			ctx.lineTo(22,470);
+			ctx.lineTo(1228-430,470);
+			ctx.lineTo(1223-430,473);
+			ctx.lineTo(1223-430,467);
+			ctx.lineTo(1228-430,470);
+			
+			ctx.moveTo(110,413);
+			ctx.lineTo(113,417);
+			ctx.lineTo(107,417);
+			ctx.lineTo(110,413);
+			ctx.lineTo(110,527);
+			ctx.lineTo(107,523);
+			ctx.lineTo(113,523);
+			ctx.lineTo(110,527);
+			ctx.font = "18px Consolas";
+			ctx.fillStyle='#000FFF';
+			ctx.fillText("E",115,429);
+			ctx.stroke();
+			
+			
+			ctx.fillStyle='#ff0000';
+			ctx.fillText("B",40,524);
+			ctx.stroke();
+			
+			ctx.fillStyle='black';
+			ctx.fillText("v",1228-440,490);
+			ctx.stroke();
+			
+							
+			
+			
+			function waveA()		{
+				ctx.beginPath();
+				ctx.moveTo(20,470);
+				ctx.lineWidth=2;
+				for (x = 110; x < 773; x++) {
+					ctx.lineTo(x,55*Math.sin(x*Math.PI/110)+470);
+					ctx.stroke();
+				}
+				ctx.strokeStyle='blue';
+				ctx.beginPath();
+				for (a = 0; a < 600; a += 220)	{
+				//arrow 1
+				ctx.moveTo(a + 137.5,469);
+				ctx.lineTo(a + 137.5,434);
+				ctx.lineTo(a + 140.5,438);
+				ctx.lineTo(a + 134.5,438);
+				ctx.lineTo(a + 137.5,434);
+				//arrow 2
+				ctx.moveTo(a + 165,469);
+				ctx.lineTo(a + 165,418);
+				ctx.lineTo(a + 168,422);
+				ctx.lineTo(a + 162,422);
+				ctx.lineTo(a + 165,418);
+				//arrow 3
+				ctx.moveTo(a + 192.5,469);
+				ctx.lineTo(a + 192.5,434);
+				ctx.lineTo(a + 195.5,438);
+				ctx.lineTo(a + 189.5,438);
+				ctx.lineTo(a + 192.5,434);
+				
+				//arrow 1d
+				ctx.moveTo(a + 27.5 + 220,471);
+				ctx.lineTo(a + 27.5 + 220,506);
+				ctx.lineTo(a + 30.5 + 220,503);
+				ctx.lineTo(a + 24.5 + 220,503);
+				ctx.lineTo(a + 27.5 + 220,506);
+				//arrow 2d
+				ctx.moveTo(a + 55 + 220,471);
+				ctx.lineTo(a + 55 + 220,522);
+				ctx.lineTo(a + 58 + 220,519);
+				ctx.lineTo(a + 52 + 220,519);
+				ctx.lineTo(a + 55 + 220,522);
+				//arrow 3d
+				ctx.moveTo(a + 82.5 + 220,471);
+				ctx.lineTo(a + 82.5 + 220,506);
+				ctx.lineTo(a + 85.5 + 220,503);
+				ctx.lineTo(a + 79.5 + 220,503);
+				ctx.lineTo(a + 82.5 + 220,506);
+				
+				
+				
+				ctx.stroke();
+				}
+			}
+			waveA();
+			function waveB()		{
+				ctx.strokeStyle='red';
+				ctx.transform(1,0,-1,1,470,0);
+				ctx.beginPath();
+				ctx.moveTo(110,413);
+				ctx.lineTo(113,417);
+				ctx.lineTo(107,417);
+				ctx.lineTo(110,413);
+				ctx.lineTo(110,527);
+				ctx.lineTo(107,523);
+				ctx.lineTo(113,523);
+				ctx.lineTo(110,527);
+				ctx.stroke();
+				ctx.strokeStyle='black';
+				ctx.moveTo(21,470);
+				ctx.lineWidth=2;
+				for (x = 110; x < 773; x++) {
+					ctx.lineTo(x,55*Math.sin(x*Math.PI/110 - Math.PI)+470);
+					ctx.stroke();
+				}
+				ctx.strokeStyle='red';
+				ctx.beginPath();
+				for (a = -110; a < 500; a += 220)	{
+					//arrow 1
+					ctx.moveTo(a + 137.5 + 220,469);
+					ctx.lineTo(a + 137.5 + 220,434);
+					ctx.lineTo(a + 140.5 + 220,438);
+					ctx.lineTo(a + 134.5 + 220,438);
+					ctx.lineTo(a + 137.5 + 220,434);
+					//arrow 2
+					ctx.moveTo(a + 165 + 220,469);
+					ctx.lineTo(a + 165 + 220,418);
+					ctx.lineTo(a + 168 + 220,422);
+					ctx.lineTo(a + 162 + 220,422);
+					ctx.lineTo(a + 165 + 220,418);
+					//arrow 3
+					ctx.moveTo(a + 192.5 + 220,469);
+					ctx.lineTo(a + 192.5 + 220,434);
+					ctx.lineTo(a + 195.5 + 220,438);
+					ctx.lineTo(a + 189.5 + 220,438);
+					ctx.lineTo(a + 192.5 + 220,434);
+					
+					//arrow 1d
+					ctx.moveTo(a + 27.5 + 220,471);
+					ctx.lineTo(a + 27.5 + 220,506);
+					ctx.lineTo(a + 30.5 + 220,503);
+					ctx.lineTo(a + 24.5 + 220,503);
+					ctx.lineTo(a + 27.5 + 220,506);
+					//arrow 2d
+					ctx.moveTo(a + 55 + 220,471);
+					ctx.lineTo(a + 55 + 220,522);
+					ctx.lineTo(a + 58 + 220,519);
+					ctx.lineTo(a + 52 + 220,519);
+					ctx.lineTo(a + 55 + 220,522);
+					//arrow 3d
+					ctx.moveTo(a + 82.5 + 220,471);
+					ctx.lineTo(a + 82.5 + 220,506);
+					ctx.lineTo(a + 85.5 + 220,503);
+					ctx.lineTo(a + 79.5 + 220,503);
+					ctx.lineTo(a + 82.5 + 220,506);
+					
+					
+					
+					ctx.stroke();
+				}
+				
+			}
+			ctx.clearRect(1231,410,30,1000);
+			ctx.save();
+			waveB();
+			ctx.restore();
+			
+			ctx.strokeStyle='red';
+			ctx.beginPath();
+			ctx.moveTo(41,510);
+			ctx.lineTo(48,510);
+			ctx.lineTo(45,507);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(709,371);
+			ctx.lineTo(716,371);
+			ctx.lineTo(713,368);
+			ctx.stroke();
+			ctx.strokeStyle='blue';
+			ctx.beginPath();
+			ctx.moveTo(115,415);
+			ctx.lineTo(122,415);
+			ctx.lineTo(119,412);
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.moveTo(338,331);
+			ctx.lineTo(345,331);
+			ctx.lineTo(342,328);
+			ctx.stroke();
+			
+		</script>
+</html>

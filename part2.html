@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title> Wave-Particle Web-App </title>
+		<author>Matthew Barton</author>
+	
+	</head>
+	
+	<body>
+	
+		<div>
+			<button type="button" onclick="location.href='index.html';">Part 1</button>
+			<button type="button" onclick="location.href='part3.html';">Part 3</button>
+			<button onclick="boxInfo()">Information (Read Me Again)</button>
+		</div>
+		
+	</body>
+	
+	<canvas id="canvas" width="1250" height="540"
+		style="border:1px solid #FFFFFF;">
+		Your browser does not support the canvas element.
+	</canvas>
+	<style>
+	body{ background-color: white; }
+	#canvas{border:0px solid red; margin:0 auto; }
+	</style>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		var cw=canvas.width;
+		var ch=canvas.height;
+		function reOffset(){
+		  var BB=canvas.getBoundingClientRect();
+		  offsetX=BB.left;
+		  offsetY=BB.top;        
+		}
+		var offsetX,offsetY;
+		reOffset();
+		window.onscroll=function(event){ reOffset(); }
+		window.onresize=function(event){ reOffset(); }
+		
+		
+		function boxInfo() {
+			alert("•One of the core concepts in these modules is the interaction between radiation & matter.\n\n•Our understanding of this interaction & those systems has given us highly accurate spectroscopic techniques.\n\n•Hover your curser over the equations for more info.");
+		}
+		
+		
+		
+		
+		ctx.font="30px Consolas";
+		ctx.fillText("Theoretical Wave",21,30);
+	
+		//draws sine wave
+		ctx.beginPath();
+		ctx.moveTo(15,200);
+		ctx.lineWidth=2;
+		for (x = 0; x < 850; x++) {
+			ctx.lineTo(x+15,-106.25*Math.sin(x*Math.PI/212.5)+200);
+			ctx.stroke();
+		}
+					
+		//draws axis
+
+		ctx.moveTo(15,200);
+		ctx.lineTo(865,200);
+		ctx.stroke();
+						
+		//labels x-axis
+
+		for (var n = 2; n < 5; n++)	{
+			ctx.font = "20px Consolas";
+			var text = "";
+			ctx.fillText(text +=n + "π", 212.5*n -10 , 215);
+		}
+		var text = "";
+		ctx.fillText(text += "π", 220, 215);
+		var text = "";
+		ctx.fillText(text += "0", 20, 215);
+		
+		
+		ctx.font='34px Consolas';	//font for bottom left equation box
+					
+		ctx.fillText("λ",450,519);		//			//bottom equation
+		ctx.fillText("(m)",547,519);	//			//bottom equation
+		ctx.fillText("c (m/s)",398,484);	//
+		ctx.fillText("v",110,499);
+		ctx.fillText("(Hz)",150,499);
+		ctx.fillText("=",284,499);								//Bottom equation
+		
+		ctx.fillText("E (J)",110,432);		//top eqn
+		ctx.fillText("=",284,432);		
+		ctx.fillText("λ",450,452);		//					
+		ctx.fillText("(m)",547,452);	//
+		ctx.fillText("h (J•s) x c",360,417);	//							
+		ctx.fillText("=",623,432);
+		ctx.fillText("h • v",673,432);			//h needs doin
+		ctx.fillText("(Hz)",860,432);
+		
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = '#000000';
+		ctx.beginPath();
+		ctx.moveTo(323,423);
+		ctx.lineTo(600,423);
+		ctx.moveTo(323,491);
+		ctx.lineTo(600,491);
+		ctx.stroke();	
+			
+		ctx.beginPath();
+		ctx.rect(15,3,850,365);
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = '#000000';
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(15,3);
+		ctx.lineTo(5,11);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(15,368);
+		ctx.lineTo(5,376);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(865,368);
+		ctx.lineTo(855,376);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(855,376);
+		ctx.lineTo(5,376);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(5,11);
+		ctx.lineTo(5,376);
+		ctx.stroke();					//draws box containing wave
+		
+		ctx.beginPath();
+		ctx.rect(884,3,365,365);
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = '#000000';
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(884,3);
+		ctx.lineTo(874,11);			
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(884,368);
+		ctx.lineTo(874,376);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(1249,368);
+		ctx.lineTo(1239,376);
+		ctx.stroke();					
+		ctx.beginPath();
+		ctx.moveTo(1239,376);
+		ctx.lineTo(874,376);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(874,376);
+		ctx.lineTo(874,11);
+		ctx.stroke();					//draws image box
+		
+		ctx.beginPath();
+		ctx.lineWidth = 2;
+		ctx.moveTo(15,385);
+		ctx.lineTo(993.75,385);	
+		ctx.lineTo(993.75,465.5);					//lines 1&2
+		
+		ctx.moveTo(661.25,538);
+		ctx.lineTo(6,538);
+		ctx.lineTo(15,530);
+		ctx.lineTo(670.25,530);
+		ctx.lineTo(661.25,538);
+		ctx.moveTo(993.75,465.5);
+		ctx.lineTo(983.75,473.5);
+		ctx.lineTo(671.25,473.5);		//bottom border
+		
+		ctx.moveTo(15,530);				
+		ctx.lineTo(15,385.5);
+		ctx.lineTo(5,393);
+		ctx.lineTo(5,538);				//LHS border
+		
+		ctx.moveTo(671.25,530);
+		ctx.lineTo(671.25,465.5);
+		ctx.lineTo(993.75,465.5);
+		ctx.stroke();					//LHS of text box border
+		
+		ctx.beginPath();
+		ctx.moveTo(15,94);
+		ctx.lineTo(25,86);
+		ctx.moveTo(15,306);
+		ctx.lineTo(25,298);
+		ctx.stroke();
+		
+		ctx.fillText("-1", 25,298);
+		ctx.fillText("+1", 25,86);
+		
+		ctx.lineWidth = 3
+		ctx.beginPath();
+		ctx.moveTo(335,306);
+		ctx.lineTo(335,330);
+		ctx.moveTo(335,318);
+		ctx.lineTo(540,318)
+		ctx.moveTo(760,318);
+		ctx.lineTo(560,318)
+		ctx.moveTo(760,306);
+		ctx.lineTo(760,330);
+		ctx.stroke();
+		ctx.font = "35px Consolas";
+		ctx.fillText("λ", 540, 328);	//λ label
+		
+		ctx.setLineDash([8,6]);			/*dashes are 5px and spaces are 3px*/
+		ctx.beginPath();
+		ctx.moveTo(15,94);
+		ctx.lineTo(120,94);
+		ctx.stroke();
+		
+		ctx.setLineDash([8,6]);
+		ctx.beginPath();
+		ctx.moveTo(15,306);
+		ctx.lineTo(330,306);
+		ctx.stroke();					//bottom dashed line
+		
+		
+		ctx.font='14px Consolas';
+
+		var shapes=[];
+
+	
+		var Lsensor1={
+			name1:'Definition: the distance between successive    ',
+			name2:'            crests in a wave.                  ',
+			name3:'Value:      variable                           ',
+			name4:'Units:      meters                             ',
+			name5:'                                               ',
+			name6:'                                               ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:540,y:328},{x:540,y:297},{x:560,y:297},{x:560,y:328}]
+		};
+		var Lsensor3={
+			name1:'Definition: the distance between successive    ',
+			name2:'            crests in a wave.                  ',
+			name3:'Value:      variable                           ',
+			name4:'Units:      meters                             ',
+			name5:'                                               ',
+			name6:'                                               ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:450,y:519},{x:450,y:492},{x:600,y:492},{x:600,y:519}]
+		};
+		var Lsensor2={
+			name1:'Definition: the distance between successive    ',
+			name2:'            crests in a wave.                  ',
+			name3:'Value:      variable                           ',
+			name4:'Units:      meters                             ',
+			name5:'                                               ',
+			name6:'                                               ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:450,y:452},{x:450,y:425},{x:600,y:425},{x:600,y:452}]
+		};
+		var bottomC={
+			name1:'Definition: a constant equal to the distance   ',
+			name2:'            electromagnetic Radiation can      ',
+			name3:'            travel in one unit of time through ',
+			name4:'            a given substance, value given is  ',
+			name5:'            the speed in a vacuum              ',
+			name6:'Value:      2.99792458e+8                      ',
+			name7:'Units:      meters per second                  ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:398,y:490},{x:538,y:490},{x:538,y:457},{x:398,y:457}]
+		};
+		var topC={
+			name1:'Definition: a constant equal to the distance   ',
+			name2:'            electromagnetic Radiation can      ',
+			name3:'            travel in one unit of time through ',
+			name4:'            a given substance, value given is  ',
+			name5:'            the speed in a vacuum              ',
+			name6:'Value:      2.99792458e+8                      ',
+			name7:'Units:      meters per second                  ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:550,y:420},{x:570,y:420},{x:570,y:388},{x:550,y:388}]
+		};
+		var topH1={
+			name1:'Definition: a constant equal to a quantum of   ',
+			name2:'            electromagnetic radiation divided  ',
+			name3:'            by its frequency (v).              ',
+			name4:'Value:      6.62607004e-34                     ',
+			name5:'Units:      Joule-Seconds',
+			name6:'',
+			name7:'',
+			name8:'',
+			name9:'',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:360,y:420},{x:485,y:420},{x:485,y:388},{x:360,y:388}]
+		};
+		var topNju={
+			name1:'Definition: in this context, it is equal to the',
+			name2:'            number of crests of a wave that    ',
+			name3:'            move past a given point in one unit',
+			name4:'            of time.                           ',
+			name5:'Value:      variable                           ',
+			name6:'Units:      Hertz = /s                         ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:743,y:438},{x:935,y:438},{x:935,y:405},{x:743,y:405}]
+		};
+		var bottomNju={
+			name1:'Definition: in this context, it is equal to the',
+			name2:'            number of crests of a wave that    ',
+			name3:'            move past a given point in one unit',
+			name4:'            of time.                           ',
+			name5:'Value:      variable                           ',
+			name6:'Units:      Hertz = /s                         ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:105,y:503},{x:225,y:503},{x:225,y:475},{x:105,y:475}]
+		};
+		var ENERGY={
+			name1:'Definition: in this context energy is the      ',
+			name2:'            potential change the radiation can ',
+			name3:'            make to a material system.         ',
+			name4:'Value:      variable                           ',
+			name5:'Units:      Joules                             ',
+			name6:'                                               ',
+			name7:'                                               ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:105,y:438},{x:200,y:438},{x:200,y:405},{x:105,y:405}]
+		};
+		var topH2={
+			name1:'Definition: a constant equal to a quantum of   ',
+			name2:'            electromagnetic radiation divided  ',
+			name3:'            by its frequency (v).              ',
+			name4:'Value:      6.62607004e-34                     ',
+			name5:'Units:      Joule-Seconds',
+			name6:'',
+			name7:'',
+			name8:'',
+			name9:'',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:670,y:438},{x:700,y:438},{x:700,y:405},{x:670,y:405}]
+		};
+		
+
+		shapes.push(Lsensor1,Lsensor2,Lsensor3,bottomC,topC,topH1,topNju,bottomNju,ENERGY,topH2);
+
+
+document.getElementById("canvas").addEventListener("mousemove", function(event) {
+handleMouseMove2(event);
+});
+				ctx.save();
+				ctx.strokeStyle='blue';
+				ctx.setLineDash([0]);
+				ctx.transform(106.25/55,0,0,106.25/55,-197,-708);
+				ctx.beginPath();
+				for (a = 0; a < 400; a += 220)	{
+				//arrow 1
+				ctx.moveTo(a + 137.5,469);
+				ctx.lineTo(a + 137.5,434);
+				ctx.lineTo(a + 140.5,438);
+				ctx.lineTo(a + 134.5,438);
+				ctx.lineTo(a + 137.5,434);
+				//arrow 2
+				ctx.moveTo(a + 165,469);
+				ctx.lineTo(a + 165,418);
+				ctx.lineTo(a + 168,422);
+				ctx.lineTo(a + 162,422);
+				ctx.lineTo(a + 165,418);
+				//arrow 3
+				ctx.moveTo(a + 192.5,469);
+				ctx.lineTo(a + 192.5,434);
+				ctx.lineTo(a + 195.5,438);
+				ctx.lineTo(a + 189.5,438);
+				ctx.lineTo(a + 192.5,434);
+				
+				//arrow 1d
+				ctx.moveTo(a + 27.5 + 220,471);
+				ctx.lineTo(a + 27.5 + 220,506);
+				ctx.lineTo(a + 30.5 + 220,503);
+				ctx.lineTo(a + 24.5 + 220,503);
+				ctx.lineTo(a + 27.5 + 220,506);
+				//arrow 2d
+				ctx.moveTo(a + 55 + 220,471);
+				ctx.lineTo(a + 55 + 220,522);
+				ctx.lineTo(a + 58 + 220,519);
+				ctx.lineTo(a + 52 + 220,519);
+				ctx.lineTo(a + 55 + 220,522);
+				//arrow 3d
+				ctx.moveTo(a + 82.5 + 220,471);
+				ctx.lineTo(a + 82.5 + 220,506);
+				ctx.lineTo(a + 85.5 + 220,503);
+				ctx.lineTo(a + 79.5 + 220,503);
+				ctx.lineTo(a + 82.5 + 220,506);
+				
+				
+				
+				ctx.stroke();
+				}
+				ctx.restore();
+
+		drawAll();
+
+		function drawAll(){
+		ctx.strokeStyle='transparent';
+		  for(var i=0;i<shapes.length;i++){
+			var s=shapes[i];
+			defineShape(s.points);
+			ctx.fillStyle=s.drawcolor;
+			ctx.fill();
+			ctx.stroke();
+			if(s.color!==s.drawcolor){
+			  ctx.clearRect(885,4,363,363);
+			  ctx.fillStyle='black';
+			  ctx.fillText(s.name1,884,30);					//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name2,884,50);					//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name3,884,70);					//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name4,884,90);					//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name5,884,110);				//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name6,884,130);				//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name7,884,150);				//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name8,884,170);				//s.name is the text which will fill the definition box
+			  ctx.fillText(s.name9,884,190);				//s.name is the text which will fill the definition box
+			}
+		  }
+		}
+
+
+		function defineShape(s){
+
+		  ctx.beginPath();
+		  ctx.moveTo(s[0].x,s[0].y);
+		  for(var i=1;i<s.length;i++){
+			ctx.lineTo(s[i].x,s[i].y);
+		  }
+		  ctx.closePath();
+		  
+		}
+
+		function handleMouseMove2(event)		{
+		  // tell the browser we're handling this event
+		  event.preventDefault();
+		  event.stopPropagation();
+
+		  mouseX=parseInt(event.clientX-offsetX);
+		  mouseY=parseInt(event.clientY-offsetY);			//these 4 lines all present in part 3
+		  
+		  for(var i=0;i<shapes.length;i++){
+			var s=shapes[i];
+
+			// define the shape path we want to test against the mouse position
+			defineShape(s.points);
+			// is the mouse insied the defined shape?
+			if(ctx.isPointInPath(mouseX,mouseY)){
+			  // if yes, fill the shape in red
+			  s.drawcolor='argb(0,255,255,255)';	//only works with RGB colour system
+			}else{
+			  // if no, fill the shape with blue
+			  s.drawcolor=s.color;
+			}
+
+		  }
+
+		  drawAll();
+		}
+
+
+	</script>
+</html>

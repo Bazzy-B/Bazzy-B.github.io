@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8" />
+		<title> Wave-Particle Web-App </title>
+		<author>Matthew Barton</author>
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<body>
+	
+		<div>
+			<button type="button" onclick="location.href='index.html';">Part 1</button>
+			<button type="button" onclick="location.href='part2.html';">Part 2</button>
+			<button type="button" onclick="location.href='part4.html';">Part 4</button>
+			<button onclick="boxInfo()">Information (And Again)</button>
+		</div>
+		
+	</body>
+	
+	<canvas id="canvas" width="1250" height="540"
+		style="border:1px solid #FFFFFF;">
+		Your browser does not support the canvas element.
+	</canvas>
+		<style>
+	body{ background-color: white; }
+	#canvas{border:0px solid red; margin:0 auto; }
+	</style>
+	<script>
+			var canvas=document.getElementById("canvas");
+			var ctx=canvas.getContext("2d");
+			
+			function boxInfo() {
+				alert("•Hover your curser over different parts of the page for more info.\n\n•Click the text-box in the bottom right corner for four of the options for 4 very short multiple-choice questions, then return to part 3 and continue the app.\n\n•Use the slidebar to explore the electromagnetic spectrum.");
+			}
+			
+			function loadIMG1()		{
+				var IMG1 = new Image();
+				IMG1.src="IMG1.jpg";
+				IMG1.addEventListener("load", function(){ctx.drawImage(IMG1, 160, 0, 480, 480, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG2()		{
+				var IMG2 = new Image();
+				IMG2.src="IMG2.png";
+				IMG2.addEventListener("load", function(){ctx.drawImage(IMG2, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG3()		{
+				var IMG3 = new Image();
+				IMG3.src="IMG3.jpg";
+				IMG3.addEventListener("load", function(){ctx.drawImage(IMG3, 214, 0, 426, 426, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG4()		{
+				var IMG4 = new Image();
+				IMG4.src="IMG4.png";
+				IMG4.addEventListener("load", function(){ctx.drawImage(IMG4, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG5()		{
+				var IMG5 = new Image();
+				IMG5.src="IMG5i.png";
+				IMG5.addEventListener("load", function(){ctx.drawImage(IMG5, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG6()		{
+				var IMG6 = new Image();
+				IMG6.src="IMG6i.png";
+				IMG6.addEventListener("load", function(){ctx.drawImage(IMG6, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG7()		{
+				var IMG7 = new Image();
+				IMG7.src="IMG7.png";
+				IMG7.addEventListener("load", function(){ctx.drawImage(IMG7, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG8()		{
+				var IMG8 = new Image();
+				IMG8.src="IMG8.png";
+				IMG8.addEventListener("load", function(){ctx.drawImage(IMG8, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG9()		{
+				var IMG9 = new Image();
+				IMG9.src="IMG9.png";
+				IMG9.addEventListener("load", function(){ctx.drawImage(IMG9, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG10()	{
+				var IMG10 = new Image();
+				IMG10.src="IMG10.png";
+				IMG10.addEventListener("load", function(){ctx.drawImage(IMG10, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG11()	{
+				var IMG11 = new Image();
+				IMG11.src="IMG11.jpg";
+				IMG11.addEventListener("load", function(){ctx.drawImage(IMG11, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG12()	{
+				var IMG12 = new Image();
+				IMG12.src="IMG12.png";
+				IMG12.addEventListener("load", function(){ctx.drawImage(IMG12, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG13()	{
+				var IMG13 = new Image();
+				IMG13.src="IMG13.jpg";
+				IMG13.addEventListener("load", function(){ctx.drawImage(IMG13, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG14()	{
+				var IMG14 = new Image();
+				IMG14.src="IMG14.png";
+				IMG14.addEventListener("load", function(){ctx.drawImage(IMG14, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG15()	{
+				var IMG15 = new Image();
+				IMG15.src="IMG15.png";
+				IMG15.addEventListener("load", function(){ctx.drawImage(IMG15, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG16()	{
+				var IMG16 = new Image();
+				IMG16.src="IMG16.jpg";
+				IMG16.addEventListener("load", function(){ctx.drawImage(IMG16, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG17()	{
+				var IMG17 = new Image();
+				IMG17.src="IMG17.jpg";
+				IMG17.addEventListener("load", function(){ctx.drawImage(IMG17, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG18()	{
+				var IMG18 = new Image();
+				IMG18.src="IMG18.jpg";
+				IMG18.addEventListener("load", function(){ctx.drawImage(IMG18, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG19()	{
+				var IMG19 = new Image();
+				IMG19.src="IMG19.png";
+				IMG19.addEventListener("load", function(){ctx.drawImage(IMG19, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG20()	{
+				var IMG20 = new Image();
+				IMG20.src="IMG20i.png";
+				IMG20.addEventListener("load", function(){ctx.drawImage(IMG20, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG21()	{
+				var IMG21 = new Image();
+				IMG21.src="IMG21.png";
+				IMG21.addEventListener("load", function(){ctx.drawImage(IMG21, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG22()	{
+				var IMG22 = new Image();
+				IMG22.src="IMG22.png";
+				IMG22.addEventListener("load", function(){ctx.drawImage(IMG22, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG23()	{
+				var IMG23 = new Image();
+				IMG23.src="IMG23.jpg";
+				IMG23.addEventListener("load", function(){ctx.drawImage(IMG23, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG24()	{
+				var IMG24 = new Image();
+				IMG24.src="IMG24.jpg";
+				IMG24.addEventListener("load", function(){ctx.drawImage(IMG24, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG25()	{
+				var IMG25 = new Image();
+				IMG25.src="IMG25.png";
+				IMG25.addEventListener("load", function(){ctx.drawImage(IMG25, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG26()	{
+				var IMG26 = new Image();
+				IMG26.src="IMG26.jpg";
+				IMG26.addEventListener("load", function(){ctx.drawImage(IMG26, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG27()	{
+				var IMG27 = new Image();
+				IMG27.src="IMG27.png";
+				IMG27.addEventListener("load", function(){ctx.drawImage(IMG27, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG28()	{
+				var IMG28 = new Image();
+				IMG28.src="IMG28.jpg";
+				IMG28.addEventListener("load", function(){ctx.drawImage(IMG28, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG29()	{
+				var IMG29 = new Image();
+				IMG29.src="IMG29.png";
+				IMG29.addEventListener("load", function(){ctx.drawImage(IMG29, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG30()	{
+				var IMG30 = new Image();
+				IMG30.src="IMG30.jpg";
+				IMG30.addEventListener("load", function(){ctx.drawImage(IMG30, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG31()	{
+				var IMG31 = new Image();
+				IMG31.src="IMG31.jpg";
+				IMG31.addEventListener("load", function(){ctx.drawImage(IMG31, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG32()	{
+				var IMG32 = new Image();
+				IMG32.src="IMG32.png";
+				IMG32.addEventListener("load", function(){ctx.drawImage(IMG32, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG33()	{
+				var IMG33 = new Image();
+				IMG33.src="IMG33.jpg";
+				IMG33.addEventListener("load", function(){ctx.drawImage(IMG33, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG34()	{
+				var IMG34 = new Image();
+				IMG34.src="IMG34.png";
+				IMG34.addEventListener("load", function(){ctx.drawImage(IMG34, 885, 4, 363, 363)}, false)
+			}
+			function loadIMG35()	{
+				var IMG35 = new Image();
+				IMG35.src="IMG35.jpg";
+				IMG35.addEventListener("load", function(){ctx.drawImage(IMG35, 885, 4, 363, 363)}, false)
+			}
+			
+			var posnX = 0;
+			var cw=canvas.width;									//slider start
+			var ch=canvas.height;
+			function reOffset(){
+				var BB=canvas.getBoundingClientRect();
+				offsetX=BB.left;
+				offsetY=BB.top;       
+			}
+			var offsetX,offsetY;
+			reOffset();
+			window.onscroll=function(event){ reOffset(); }
+			window.onresize=function(event){ reOffset(); }
+			
+			
+			
+			var isDown=false;
+			
+			var range=makeRangeControl(1013,420,220,40);			//range variable created
+			drawRangeControl(range);
+
+			canvas.onmousedown=(function(event){handleMouseDown(event);});
+			canvas.onmousemove=(function(event){handleMouseMove(event);});		//slidebar facilitator
+			canvas.onmouseup=(function(event){handleMouseUpOut(event);});
+			canvas.onmouseout=(function(event){handleMouseUpOut(event);});
+
+
+
+			function makeRangeControl(x,y,width,height){
+				var range={x:x,y:y,width:width,height:height};
+				range.x1=range.x+range.width;
+				range.y1=range.y;
+				//
+				range.pct=0;
+				return(range);
+			}
+
+			function drawRangeControl(range){
+				// clear the range control area
+
+				// bar
+				ctx.lineWidth=20;
+				ctx.lineCap='square';
+				ctx.beginPath();
+				ctx.moveTo(range.x,range.y);
+				ctx.lineTo(range.x1,range.y);
+				ctx.strokeStyle='black';
+				ctx.stroke();
+				// thumb
+				ctx.beginPath();
+				var thumbX=range.x+range.width*range.pct;
+				ctx.moveTo(thumbX,range.y-range.height/2);
+				ctx.lineTo(thumbX,range.y+range.height/2);
+				ctx.strokeStyle='#000FFF';
+				ctx.stroke();
+				//img vars n fns 
+				
+				var slidPut = Math.exp(parseInt(range.pct*100/2.8952) - 27.63)	//variable for usage in all systems related to slide bar
+				var nju = (299792458/slidPut)
+				var energy = nju*6.62607004e-34
+				
+				
+				// legend
+				ctx.font='34px Consolas';	//font for bottom left equation box
+				
+				ctx.fillText(slidPut.toPrecision(4),range.x+range.width/2 - 800,range.y-range.height/2 +119);	//bottom equation
+				ctx.fillText("(m)",range.x+range.width/2 - 576,range.y-range.height/2 +119);	//bottom equation
+				ctx.fillText("c (m/s)",range.x+range.width/2 - 725,range.y-range.height/2 +84);
+				ctx.fillText(nju.toPrecision(4),range.x+range.width/2 - 1100,range.y-range.height/2 +105);
+				ctx.fillText("(Hz)",range.x+range.width/2 - 930,range.y-range.height/2 +105);
+				ctx.fillText("=",range.x+range.width/2 - 839,range.y-range.height/2 +105);								//Bottom equation
+				
+				ctx.fillText(energy.toPrecision(4) + " (J)",range.x+range.width/2 - 1100,range.y-range.height/2 +32);		//top eqn
+				ctx.fillText("=",range.x+range.width/2 - 839,range.y-range.height/2 +32);		
+				ctx.fillText(slidPut.toPrecision(4),range.x+range.width/2 - 800,range.y-range.height/2 +52);	
+				ctx.fillText("(m)",range.x+range.width/2 - 576,range.y-range.height/2 +52);	
+				ctx.fillText("h (J•s) x c",range.x+range.width/2 - 763,range.y-range.height/2 +17);							
+				ctx.fillText("=",range.x+range.width/2 - 500,range.y-range.height/2 +32);
+				ctx.fillText("h • "+ nju.toPrecision(4),range.x+range.width/2 - 450,range.y-range.height/2 +32);
+				ctx.fillText("(Hz)",range.x+range.width/2 - 207,range.y-range.height/2 +32);							//top eqn
+				
+				ctx.lineWidth = 2;
+				ctx.strokeStyle = '#000000';
+				ctx.beginPath();
+				ctx.moveTo(323,423);
+				ctx.lineTo(600,423);
+				ctx.moveTo(323,491);
+				ctx.lineTo(600,491);
+				ctx.stroke();																							//fraction lines
+				
+				
+				ctx.font='60px Consolas';	//font for Dtext
+				if (slidPut < Math.exp(- 24.923)) {ctx.fillText("Gamma Ray",range.x - 273,range.y + 88);}									//min value for slidPut
+				if (slidPut > Math.exp(- 24.923) && slidPut < Math.exp(- 20.318)) {ctx.fillText("X-Ray",range.x - 273,range.y + 88);}
+				if (slidPut > Math.exp(- 20.318) && slidPut < Math.exp(- 14.783)) {ctx.fillText("Ultra Violet",range.x - 273,range.y + 88);}
+				if (slidPut > Math.exp(- 14.783) && slidPut < Math.exp(- 14.144)) {ctx.fillText("Visible Light",range.x - 273,range.y + 88);}
+				if (slidPut > Math.exp(- 14.144)  && slidPut < Math.exp(- 6.91)) {ctx.fillText("Infrared",range.x - 273,range.y + 88);}
+				if (slidPut > Math.exp(- 6.91) && slidPut < Math.exp(0)) {ctx.fillText("Micro Wave",range.x - 273,range.y + 88);}
+				if (slidPut < Math.exp(  6.91) && slidPut > Math.exp(0)) {ctx.fillText("Radio Wave",range.x - 273,range.y + 88);}			//max value for slidPut
+				
+				
+				if (slidPut > 584)	{loadIMG1();}
+				if (slidPut > 214 && slidPut < 215)				{loadIMG2();}
+				if (slidPut > 79 && slidPut < 80)				{loadIMG3();}
+				if (slidPut > 29 && slidPut < 30)				{loadIMG4();}
+				if (slidPut > 10 && slidPut < 11)				{loadIMG5();}
+				if (slidPut > 3.9 && slidPut < 4)				{loadIMG6();}
+				if (slidPut > 1.4 && slidPut < 1.5)				{loadIMG7();}
+				if (slidPut > 0.51 && slidPut < 0.54)			{loadIMG8();}
+				if (slidPut > 0.194 && slidPut < 0.196)			{loadIMG9();}
+				if (slidPut > 0.07206 && slidPut < 0.07208)		{loadIMG10();}
+				if (slidPut > 0.02650 && slidPut < 0.02652)		{loadIMG11();}
+				if (slidPut > 0.009753 && slidPut < 0.009755)	{loadIMG12();}
+				if (slidPut > 0.00357 && slidPut < 0.00359)		{loadIMG13();}
+				if (slidPut > 0.00131 && slidPut < 0.00133)		{loadIMG14();}
+				if (slidPut > 0.000484 && slidPut < 0.000486)	{loadIMG15();}
+				if (slidPut > 0.000177 && slidPut < 0.000179)	{loadIMG16();}
+				if (slidPut > 0.0000656 && slidPut < 0.0000658)	{loadIMG17();}
+				if (slidPut > 2.4e-5 && slidPut < 2.42e-5)		{loadIMG18();}
+				if (slidPut > 8.88e-6 && slidPut < 8.90e-6)		{loadIMG19();}
+				if (slidPut > 3.26e-6 && slidPut < 3.28e-6)		{loadIMG20();}
+				if (slidPut > 1.19e-6 && slidPut < 1.21e-6)		{loadIMG21();}
+				if (slidPut > 4.41e-7 && slidPut < 4.43e-7)		{loadIMG22();}
+				if (slidPut > 1.62e-7 && slidPut < 1.63e-7)		{loadIMG23();}
+				if (slidPut > 5.99e-8 && slidPut < 6.00e-8)		{loadIMG24();}
+				if (slidPut > 2.20e-8 && slidPut < 2.21e-8)		{loadIMG25();}
+				if (slidPut > 8.11e-9 && slidPut < 8.12e-9)		{loadIMG26();}
+				if (slidPut > 2.98e-9 && slidPut < 2.99e-9)		{loadIMG27();}
+				if (slidPut > 1.09e-9 && slidPut < 1.10e-9)		{loadIMG28();}
+				if (slidPut > 4.03e-10 && slidPut < 4.04e-10)	{loadIMG29();}
+				if (slidPut > 1.48e-10 && slidPut < 1.49e-10)	{loadIMG30();}
+				if (slidPut > 5.46e-11 && slidPut < 5.47e-11)	{loadIMG31();}
+				if (slidPut > 2.01e-11 && slidPut < 2.02e-11)	{loadIMG32();}
+				if (slidPut > 7.39e-12 && slidPut < 7.40e-12)	{loadIMG33();}
+				if (slidPut > 2.72e-12 && slidPut < 2.73e-12)	{loadIMG34();}
+				if (slidPut > 1.00e-12 && slidPut < 1.01e-12)	{loadIMG35();}
+				
+			}
+			
+			
+			
+			
+			//Function to get the mouse position
+				function getMousePos(canvas, event) {
+					var rect = canvas.getBoundingClientRect();
+					return {
+						x: event.clientX - rect.left,
+						y: event.clientY - rect.top
+					};
+				}
+				//Function to check whether a point is inside a rectangle
+				function isInside(pos, rect){
+					return pos.x > rect.x && pos.x < rect.x+rect.width && pos.y < rect.y+rect.height && pos.y > rect.y
+				}
+
+
+				//The rectangle should have x,y,width,height properties
+				var rect = {
+					x:681.25,
+					y:457.5,
+					width:566.75,
+					height:64.5
+				};
+				//Binding the click event on the canvas
+				canvas.addEventListener('click', function(evt) {
+					var mousePos = getMousePos(canvas, evt);
+
+					
+					if (isInside(mousePos,rect) && Math.exp(parseInt(range.pct*100/2.8952) - 27.63) > Math.exp(- 20.318)
+					&& Math.exp(parseInt(range.pct*100/2.8952) - 27.63) < Math.exp(- 14.144))
+					{location.href='https://docs.google.com/forms/d/e/1FAIpQLSeYNsr5m3klJfQe2llRZXFMesTZcetreWOOl3arFRfDTtmGyw/viewform?usp=sf_link';}
+					
+					if (isInside(mousePos,rect) && Math.exp(parseInt(range.pct*100/2.8952) - 27.63) > Math.exp(- 14.144)
+					&& Math.exp(parseInt(range.pct*100/2.8952) - 27.63) < Math.exp(- 6.91))
+					{location.href='https://docs.google.com/forms/d/e/1FAIpQLSfwayRSiScU-JgL1fv4LQSqIVvj8ntILO9IjL5FEJ-lJpy88Q/viewform?usp=sf_link';}
+					
+					if (isInside(mousePos,rect) && Math.exp(parseInt(range.pct*100/2.8952) - 27.63) > Math.exp(- 6.91)
+					&& Math.exp(parseInt(range.pct*100/2.8952) - 27.63) < Math.exp(0))
+					{location.href='https://docs.google.com/forms/d/e/1FAIpQLSelpbbvxgljr4_3q4lJ7slSMgf3qYq2F68kLrR869cBws9qTA/viewform?usp=sf_link';}
+					
+					if (isInside(mousePos,rect) && Math.exp(parseInt(range.pct*100/2.8952) - 27.63) > Math.exp(0)
+					&& Math.exp(parseInt(range.pct*100/2.8952) - 27.63) < Math.exp(6.91))
+					{location.href='https://docs.google.com/forms/d/e/1FAIpQLSebCB756vIPxcGx-MjslPT8-NtaI4YtUfodoPHIX_nZWC4DWw/viewform?usp=sf_link';}
+			//^text box buttons
+				}, false);
+			
+			
+			
+			
+			
+			function handleMouseDown(event){
+				// tell the browser we're handling this event
+				event.preventDefault();
+				event.stopPropagation();
+				// get mouse position
+				var mx=parseInt(event.clientX-offsetX);
+				var my=parseInt(event.clientY-offsetY);
+				// test for possible start of dragging
+				isDown=(mx>range.x && mx<range.x+range.width && my>range.y-range.height/2 && my<range.y+range.height/2);
+			}
+
+			function handleMouseUpOut(event){
+				// tell the browser we're handling this event
+				event.preventDefault();
+				event.stopPropagation();
+				// stop dragging
+				isDown=false;
+			}
+			
+			function handleMouseMove(event){
+				if(!isDown){return;}								// '!' means not/negate
+				// tell the browser we're handling this event
+				event.preventDefault();
+				event.stopPropagation();
+				// get mouse position
+				mouseX=parseInt(event.clientX-offsetX);
+				mouseY=parseInt(event.clientY-offsetY);
+				// set new thumb & redraw
+				range.pct=Math.max(0,Math.min(1,(mouseX-range.x)/range.width));
+				ctx.clearRect(range.x-12.5,range.y-range.height/2-15,range.width+25,range.height+25);
+				ctx.clearRect(range.x-300,range.y+46,500,55);				//text box re-writer - do for all changing objects
+				ctx.clearRect(range.x+range.width/2 - 1103,range.y-range.height/2 - 12,970,68);					//top eqn
+				ctx.clearRect(range.x+range.width/2 - 1103,range.y-range.height/2 + 55,650,73);					//bottom eqn
+				drawRangeControl(range);
+			}								//slider end
+			
+	
+	ctx.beginPath();
+	ctx.rect(15,3,850,365);
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#000000';
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(15,3);
+	ctx.lineTo(5,11);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(15,368);
+	ctx.lineTo(5,376);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(865,368);
+	ctx.lineTo(855,376);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(855,376);
+	ctx.lineTo(5,376);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(5,11);
+	ctx.lineTo(5,376);
+	ctx.stroke();					//draws box containing wave
+
+	ctx.beginPath();
+	ctx.rect(884,3,365,365);
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#000000';
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(884,3);
+	ctx.lineTo(874,11);			
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(884,368);
+	ctx.lineTo(874,376);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(1249,368);
+	ctx.lineTo(1239,376);
+	ctx.stroke();					
+	ctx.beginPath();
+	ctx.moveTo(1239,376);
+	ctx.lineTo(874,376);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(874,376);
+	ctx.lineTo(874,11);
+	ctx.stroke();					//draws image box
+	
+	
+
+	ctx.beginPath();
+	ctx.lineWidth = 2;
+	ctx.moveTo(15,385);
+	ctx.lineTo(993.75,385);	
+	ctx.lineTo(993.75,457.5);					//lines 1&2
+	
+	ctx.rect(681.25,457.5,566.75,64.5);				
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#000000';	//text rectangle
+	
+	ctx.moveTo(1248,522);			
+	ctx.lineTo(1228,538);			
+	ctx.lineTo(6,538);				
+	ctx.lineTo(15,530);				
+	ctx.lineTo(671.25,530);			
+	ctx.lineTo(681.25,522);			//bottom border
+	
+	ctx.moveTo(15,530);				
+	ctx.lineTo(15,385.5);
+	ctx.lineTo(5,393);
+	ctx.lineTo(5,538);				//LHS border
+	
+	ctx.moveTo(671.25,530);
+	ctx.lineTo(671.25,465.5);
+	ctx.lineTo(681.25,457.5);
+	ctx.stroke();					//LHS of text box border
+	
+	
+	ctx.font="30px Consolas";
+	ctx.fillText("Representation of Physical Wave with real data",21,30);
+	
+	function animateSineWave()	{
+		{
+			ctx.clearRect(16, 40, 848, 299);												//works in conjunction with RAF to wipe canvas in-between frames
+			ctx.clearRect(866, 307, 7, 7);
+			ctx.lineWidth=2;	
+			ctx.strokeStyle='black';
+			ctx.font="21px Consolas";
+			
+			posnX += 0.25;																//variable proportional to velocity of wave
+			ctx.beginPath();
+			ctx.moveTo(15,203);															//starting point of wave's line
+				for (x = -150; x < 865; x++)	{
+					y = 106.25*Math.sin(x*Math.PI/212.5 + posnX/10);
+					ycos = 106.25*Math.cos((x)*Math.PI/212.5 + posnX/10);				//F-L's range of values - the wave's repeating unit
+					ycos1 = 106.25*Math.cos((x+1)*Math.PI/212.5 + posnX/10);			
+					ctx.lineTo(x,y + 200);												//axis for wave's drawing
+					if (ycos > 0 && ycos1 < 0 && x < 736) {
+						ctx.fillText("λ = " + Math.exp(parseInt(range.pct*100/2.8952) - 27.63).toExponential(1) + " m", x, 324);
+					
+					}
+				}
+				
+			ctx.stroke();
+
+			requestAnimationFrame(animateSineWave);
+		}
+		
+		
+		ctx.clearRect(866,310,7,14);
+		ctx.clearRect(875,310,8,14);
+		ctx.clearRect(0,0,4,324);
+		ctx.clearRect(6,12,8,324);
+	}
+
+		animateSineWave();
+	
+	
+//my attempt to MERGE
+
+ctx.font='14px Consolas';
+
+var shapes=[];
+var testSensor={
+	name1:'',
+	name2:'',
+	color:'transparent',
+	drawcolor:'transparent',
+	points:[{x:5,y:452},{x:6,y:452},{x:6,y:453},{x:5,y:453}]
+};
+
+var Lsensor3={
+			name1:'Definition: the distance between successive    ',
+			name2:'            crests in a wave.                  ',
+			name3:'Value:      variable                           ',
+			name4:'Units:      meters                             ',
+			name5:'                                               ',
+			name6:'--The slide bar is proportional to wavelength--',
+			name7:'                                               ',
+			name8:'Does the wavelength correspond to the size of  ',
+			name9:'matter the radiation interacts with?           ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:450,y:519},{x:450,y:492},{x:600,y:492},{x:600,y:519}]
+		};
+		var Lsensor2={
+			name1:'Definition: the distance between successive    ',
+			name2:'            crests in a wave.                  ',
+			name3:'Value:      variable                           ',
+			name4:'Units:      meters                             ',
+			name5:'                                               ',
+			name6:'--The slide bar is proportional to wavelength--',
+			name7:'                                               ',
+			name8:'Does the wavelength correspond to the size of  ',
+			name9:'matter the radiation interacts with?           ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:450,y:452},{x:450,y:425},{x:600,y:425},{x:600,y:452}]
+		};
+		var bottomC={
+			name1:'Definition: a constant equal to the distance   ',
+			name2:'            electromagnetic Radiation can      ',
+			name3:'            travel in one unit of time through ',
+			name4:'            a given substance, value given is  ',
+			name5:'            the speed in a vacuum              ',
+			name6:'Value:      2.99792458e+8                      ',
+			name7:'Units:      meters per second                  ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:398,y:490},{x:538,y:490},{x:538,y:457},{x:398,y:457}]
+		};
+		var topC={
+			name1:'Definition: a constant equal to the distance   ',
+			name2:'            electromagnetic Radiation can      ',
+			name3:'            travel in one unit of time through ',
+			name4:'            a given substance, value given is  ',
+			name5:'            the speed in a vacuum              ',
+			name6:'Value:      2.99792458e+8                      ',
+			name7:'Units:      meters per second                  ',
+			name8:'                                               ',
+			name9:'                                               ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:550,y:420},{x:570,y:420},{x:570,y:388},{x:550,y:388}]
+		};
+		var topH1={
+			name1:'Definition: Plancks constant equal to a quantum',
+			name2:'            of electromagnetic radiation       ',
+			name3:'            divided by its frequency (v).      ',
+			name4:'Value:      6.62607004e-34                     ',
+			name5:'Units:      Joule-Seconds',
+			name6:'',
+			name7:'',
+			name8:'',
+			name9:'',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:360,y:420},{x:485,y:420},{x:485,y:388},{x:360,y:388}]
+		};
+		var topNju={
+			name1:'Definition: in this context, it is equal to the',
+			name2:'            number of crests of a wave that    ',
+			name3:'            move past a given point in one unit',
+			name4:'            of time.                           ',
+			name5:'Value:      variable                           ',
+			name6:'Units:      Hertz = /s                         ',
+			name7:'                                               ',
+			name8:'Why with a larger wavelength is there a smaller',
+			name9:'frequency?                                     ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:743,y:438},{x:935,y:438},{x:935,y:405},{x:743,y:405}]
+		};
+		var bottomNju={
+			name1:'Definition: in this context, it is equal to the',
+			name2:'            number of crests of a wave that    ',
+			name3:'            move past a given point in one unit',
+			name4:'            of time.                           ',
+			name5:'Value:      variable                           ',
+			name6:'Units:      Hertz = /s                         ',
+			name7:'                                               ',
+			name8:'Why with a larger wavelength is there a smaller',
+			name9:'frequency?                                     ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:105,y:503},{x:225,y:503},{x:225,y:475},{x:105,y:475}]
+		};
+		var ENERGY={
+			name1:'Definition: in this context energy is the      ',
+			name2:'            potential change the radiation can ',
+			name3:'            make to a material system.         ',
+			name4:'Value:      variable                           ',
+			name5:'Units:      Joules                             ',
+			name6:'                                               ',
+			name7:'                                               ',
+			name8:'Why with an increasing energy do we get a      ',
+			name9:'decreasing frequency?                          ',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:105,y:438},{x:200,y:438},{x:200,y:405},{x:105,y:405}]
+		};
+		var topH2={
+			name1:'Definition: Plancks constant equal to a quantum',
+			name2:'            of electromagnetic radiation       ',
+			name3:'            divided by its frequency (v).      ',
+			name4:'Value:      6.62607004e-34                     ',
+			name5:'Units:      Joule-Seconds',
+			name6:'',
+			name7:'',
+			name8:'',
+			name9:'',
+			color:'transparent',
+			drawcolor:'transparent',
+			points:[{x:670,y:438},{x:700,y:438},{x:700,y:405},{x:670,y:405}]
+		};
+
+
+shapes.push(testSensor,Lsensor3,Lsensor2,bottomC,topC,topH1,topNju,bottomNju,topH2,ENERGY);
+
+
+document.getElementById("canvas").addEventListener("mousemove", function(event) {
+handleMouseMove2(event);
+});
+
+
+drawAll();
+
+function drawAll(){
+ctx.strokeStyle='transparent';
+  for(var i=0;i<shapes.length;i++){
+	var s=shapes[i];
+	defineShape(s.points);
+	ctx.fillStyle=s.drawcolor;
+	ctx.fill();
+	ctx.stroke();
+	ctx.font='14px Consolas';
+	if(s.color!==s.drawcolor){
+		ctx.clearRect(885,4,363,363);
+		ctx.fillStyle='black';
+		ctx.fillText(s.name1,884,30);					//s.name is the text which will fill the definition box
+		ctx.fillText(s.name2,884,50);					//s.name is the text which will fill the definition box
+		ctx.fillText(s.name3,884,70);					//s.name is the text which will fill the definition box
+		ctx.fillText(s.name4,884,90);					//s.name is the text which will fill the definition box
+		ctx.fillText(s.name5,884,110);				//s.name is the text which will fill the definition box
+		ctx.fillText(s.name6,884,130);				//s.name is the text which will fill the definition box
+		ctx.fillText(s.name7,884,150);				//s.name is the text which will fill the definition box
+		ctx.fillText(s.name8,884,170);				//s.name is the text which will fill the definition box
+		ctx.fillText(s.name9,884,190);
+	}
+  }
+}
+
+
+function defineShape(s){
+
+  ctx.beginPath();
+  ctx.moveTo(s[0].x,s[0].y);
+  for(var i=1;i<s.length;i++){
+	ctx.lineTo(s[i].x,s[i].y);
+  }
+  ctx.closePath();
+  
+}
+
+function handleMouseMove2(event)		{
+  // tell the browser we're handling this event
+  event.preventDefault();
+  event.stopPropagation();
+
+  mouseX=parseInt(event.clientX-offsetX);
+  mouseY=parseInt(event.clientY-offsetY);			//these 4 lines all present in part 3
+  
+  for(var i=0;i<shapes.length;i++){
+	var s=shapes[i];
+
+	// define the shape path we want to test against the mouse position
+	defineShape(s.points);
+	// is the mouse insied the defined shape?
+	if(ctx.isPointInPath(mouseX,mouseY)){
+	  // if yes, fill the shape in red
+	  s.drawcolor='argb(0,255,255,255)';	//only works with RGB colour system
+	}else{
+	  // if no, fill the shape with blue
+	  s.drawcolor=s.color;
+	}
+
+  }
+
+  drawAll();
+  ctx.fillStyle='black';
+  }
+
+	
+	</script>
+</html>
